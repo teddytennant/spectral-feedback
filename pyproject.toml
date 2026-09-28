@@ -1,0 +1,26 @@
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "spectral-feedback"
+version = "0.1.0"
+description = "JAX kernel of Spectral Feedback for test-time alignment of protein diffusion models (arXiv:2609.30456)"
+readme = "README.md"
+requires-python = ">=3.10"
+authors = [{name = "Teddy Tennant", email = "teddytennant@icloud.com"}]
+dependencies = ["jax>=0.4.30", "numpy"]
+
+[project.optional-dependencies]
+tests = ["pytest>=7"]
+
+[tool.setuptools.package-dir]
+"" = "src"
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+pythonpath = ["src"]
+addopts = "-q"
